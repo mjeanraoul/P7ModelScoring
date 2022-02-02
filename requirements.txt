@@ -1,0 +1,9 @@
+Streamlit
+pandas
+numpy
+matplotlib
+seaborn
+joblib
+shap
+plotly
+umap-learn==0.5.2
