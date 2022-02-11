@@ -6,4 +6,8 @@ seaborn
 joblib
 shap
 plotly
-umap-learn==0.5.2
+pickle
+zipfile
+shap
+lightgbm
+KMeans
