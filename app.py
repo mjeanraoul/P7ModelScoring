@@ -15,14 +15,14 @@ from zipfile import ZipFile
 
 def main():
     def load_data():
-        #Version locale
-        z = ZipFile("C:/Users/User/Documents/OpenClassroom/Projet7/Data/app_train_domain_norm_idx.zip")
+        #Version on-line
+        z = ZipFile("app_train_domain_norm_idx.zip")
         data = pd.read_pickle(z.open('app_train_domain_norm_idx'))
         #data = pd.read_pickle("C:/Users/User/Documents/OpenClassroom/Projet7/Data/app_train_domain_norm_idx")
-        z = ZipFile("C:/Users/User/Documents/OpenClassroom/Projet7/Data/train_sample.zip")
+        z = ZipFile("train_sample.zip")
         sample = pd.read_pickle(z.open('train_sample'))
         #sample=pd.read_pickle("C:/Users/User/Documents/OpenClassroom/Projet7/Data/train_sample")
-        description = pd.read_csv("C:/Users/User/Documents/OpenClassroom/Projet7/Data/Projet_Mise_en_prod_home_credit_default_risk/HomeCredit_columns_description.csv",
+        description = pd.read_csv("HomeCredit_columns_description.csv",
                           usecols=['Row', 'Description'], index_col=0, encoding='unicode_escape')
         #Version on-line
 
@@ -42,7 +42,7 @@ def main():
     def load_data_app(file):
         # app_domain sera zippé car trop gros Github
         #data = pd.read_pickle("C:/Users/User/Documents/OpenClassroom/Projet7/Data/"+file)
-        z = ZipFile("C:/Users/User/Documents/OpenClassroom/Projet7/Data/app_domain.zip")
+        z = ZipFile("app_domain.zip")
         data = pd.read_pickle(z.open('app_domain'))
         data = data.set_index('SK_ID_CURR')
         Num_client = set(data.index)
@@ -52,7 +52,7 @@ def main():
     def load_data_test():
         # app_test_domain_norm_idx sera zippé car trop gros Github
         #app_test_domain_norm_idx.zip
-        z = ZipFile("C:/Users/User/Documents/OpenClassroom/Projet7/Data/app_test_domain_norm_idx.zip")
+        z = ZipFile("app_test_domain_norm_idx.zip")
         data = pd.read_pickle(z.open('app_test_domain_norm_idx'))
         #data = pd.read_pickle("C:/Users/User/Documents/OpenClassroom/Projet7/Data/app_test_domain_norm_idx")
         Num_client = set(data.index)
@@ -60,11 +60,11 @@ def main():
 
     # @st.cache
     def load_model():
-        model = joblib.load("C:/Users/User/Documents/OpenClassroom/Projet7/P7_mercier_jeanraoul/strealit_model.sav")
+        model = joblib.load("strealit_model.sav")
         return model
 
     def load_model_shap():
-        model = joblib.load("C:/Users/User/Documents/OpenClassroom/Projet7/P7_mercier_jeanraoul/strealit_model_shap.sav")
+        model = joblib.load("strealit_model_shap.sav")
         return model
 
     # @st.cache
