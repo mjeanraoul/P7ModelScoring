@@ -22,7 +22,7 @@ def main():
         data = data.set_index('SK_ID_CURR')
         sample=pd.read_csv("app_test_domain_norm_idx.csv", sep=",")
         sample = sample.set_index('SK_ID_CURR')
-        description = pd.read_csv("Projet_Mise_en_prod_home_credit_default_risk/HomeCredit_columns_description.csv",
+        description = pd.read_csv("HomeCredit_columns_description.csv",
                           usecols=['Row', 'Description'], index_col=0, encoding='unicode_escape')
         return data, sample, description
 
