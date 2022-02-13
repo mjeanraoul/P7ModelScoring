@@ -6,7 +6,6 @@ seaborn
 joblib
 shap
 plotly
-pickle
 zipfile
 lightgbm
 KMeans
